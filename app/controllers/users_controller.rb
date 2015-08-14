@@ -17,6 +17,9 @@ class UsersController < ApplicationController
     if @user.save
       # thanks! you're in!
       session[:user_id] = @user.id
+
+      #Destination.where(:user_id => session[:user_id].to_i)
+
     else
       # womp womp.. error msg
       @message = 'User account exists or passwords do not match.'

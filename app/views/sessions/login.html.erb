@@ -1,2 +1,14 @@
-<h1>Sessions#login</h1>
-<p>Find me in app/views/sessions/login.html.erb</p>
+<h4>User Login</h4>
+
+<% if @message.nil? == false %>
+  <span class='error'><%= @message %></span>
+<% end %>
+
+<%= form_tag '/users/login_confirmation' do %>
+
+  Email: <%= text_field_tag :email %>
+  Password: <%= password_field_tag :password %>
+
+  <%= submit_tag 'Login!' %>
+
+<% end %>
